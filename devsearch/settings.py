@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ef9)*u(jwno-^438+08-t-ygud8@k$w_6o-8!icj$v28uj=9f6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['devsearch-mohamad.herokuapp.com']
 
 
 # Application definition
@@ -193,3 +193,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if os.getcwd() == '/app':
+    DEBUG = False
