@@ -6,7 +6,12 @@ I used Python's **_Django framework_** to develop this project, although the des
 
 Unfortunately, this project is not ready for deployment and is **_hosted locally_**, and thats because I couldn't afford to pay for a live server and a database.
 
-Here are some features of this website:
+
+### Here are some features of this website:
+
+
+https://user-images.githubusercontent.com/79358072/134820929-189aa02b-28c7-4a54-a500-cec486ecc0e9.mp4
+
 
 ## Login Page:
 
