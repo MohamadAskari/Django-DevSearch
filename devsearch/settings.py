@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
+import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -134,18 +135,26 @@ WSGI_APPLICATION = 'devsearch.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DATABASE',
-        'USER': 'txzfimhnrozpdq',
-        'PASSWORD': 'e3b69b5c27e7e71bba4a2f20353d124846c91dd124b6fcfd8fb3d4b521edce0f',
-        'HOST': 'ec2-35-171-171-27.compute-1.amazonaws.com',
-        'PORT': 5432,
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'DATABASE',
+#         'USER': 'txzfimhnrozpdq',
+#         'PASSWORD': 'e3b69b5c27e7e71bba4a2f20353d124846c91dd124b6fcfd8fb3d4b521edce0f',
+#         'HOST': 'ec2-35-171-171-27.compute-1.amazonaws.com',
+#         'PORT': 5432,
+#     }
+# }
+import dj_database_url
+import dotenv
 
-# import dj_database_url
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
 
@@ -211,3 +220,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 if os.getcwd() == '/app':
     DEBUG = False
+
+django_heroku.settings(locals())
