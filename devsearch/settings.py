@@ -123,14 +123,25 @@ WSGI_APPLICATION = 'devsearch.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'DevSearch',
+#         'USER': 'postgres',
+#         'PASSWORD': os.environ.get('DB_PASS'),
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DevSearch',
-        'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'DATABASE',
+        'USER': 'txzfimhnrozpdq',
+        'PASSWORD': 'e3b69b5c27e7e71bba4a2f20353d124846c91dd124b6fcfd8fb3d4b521edce0f',
+        'HOST': 'ec2-35-171-171-27.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
