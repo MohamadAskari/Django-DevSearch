@@ -4,7 +4,7 @@ DevSearch is a social platform for developers to connect with others and share t
 
 I used Python's **_Django framework_** to develop this project, although the design and most of the CSS is not done by me and I had to use a UIkit.
 
-Unfortunately, this project is not ready for deployment and is **_hosted locally_** on a postreSQL database, and thats because I couldn't afford to pay for a live server and a database.
+Unfortunately, this project is not ready for deployment and is **_hosted locally_** on a PostreSQL database, and thats because I couldn't afford to pay for a live server and a database.
 
 
 ### Here are some features of this website:
